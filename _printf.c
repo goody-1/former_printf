@@ -1,6 +1,4 @@
 #include "main.h"
-#include <stdarg.h>
-#include <stdio.h>
 
 /**
  * _printf -produces output according to a format.
@@ -11,11 +9,20 @@
 
 int _printf(const char *format, ...)
 {
+int print_c;
+
+print_t func[] = {
+{"c", print_char},
+{"s", print_string},
+{"%", print_percent}
+}; 
+
 va_list list;
+ if (format == NULL)
+ return (-1);
 
 va_start(list, format);
-
-
+print_c = printer_func(format, func, list);
 va_end(list);
-return (printed_arg);
+return (print_c);
 }

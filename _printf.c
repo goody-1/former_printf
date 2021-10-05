@@ -14,7 +14,7 @@ int print_c;
 print_t func[] = {
 {"c", print_char},
 {"s", print_string},
-{"%", print_percent}
+{"%", print_percent},
 }; 
 
 va_list list;

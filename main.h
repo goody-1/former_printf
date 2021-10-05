@@ -13,13 +13,13 @@
 struct printer
 {
 char *symbol;
-int (*func)(va_list);
+int (*func_t)(va_list);
 }; typedef struct printer print_t;
 
 /* function that produces output according to a format */
 int _printf(const char *format, ...);
-int print_char(va_list);
-int print_string(va_list);
-int print_percent(va_list);
+int print_char(va_list list);
+int print_string(va_list list);
+int print_percent(va_list list);
 
 #endif /* MAIN_H */

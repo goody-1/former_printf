@@ -2,27 +2,45 @@
 
 /**
  * _printf -produces output according to a format.
- * @format: a character string
+ * @format: Argument passed tothe function
  * 
  * Return: the number of characters printed
  */
 
 int _printf(const char *format, ...)
 {
-int print_c;
+int i, check = 0;
 
-print_t func[] = {
-{"c", print_char},
-{"s", print_string},
-{"%", print_percent},
-}; 
+va_list arguments;
+int (*func)(va_list);
 
-va_list list;
- if (format == NULL)
- return (-1);
+va_start(arguments, format);
+if (format = NULL)
+return (-1);
+for (i = 0; format[i]; i++)
+{
+if (format[i] == '%')
+{
+i++;
+if (!(format[i]))
+return (-1);
+func = get_flag_func(format[i]);
 
-va_start(list, format);
-print_c = printer_func(format, func, list);
-va_end(list);
-return (print_c);
+if (func == NULL)
+{
+_write('%');
+_write(format[i]);
+check += 2;
+}
+else
+check += func(arguments);
+}
+else
+{
+_write(format[i]);
+check++;
+}
+}
+va_end(arguments);
+return (check);
 }

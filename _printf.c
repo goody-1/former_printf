@@ -2,13 +2,8 @@
 
 /**
  * _printf -produces output according to a format.
-<<<<<<< HEAD
- * @format: Argument passed tothe function
- * 
-=======
- * @format: a character string
- *
->>>>>>> f34751e2f18a09466dfc6d76adfdf341b1010377
+ * @format: Argument passed to the function
+ *  
  * Return: the number of characters printed
  */
 
@@ -16,16 +11,8 @@ int _printf(const char *format, ...)
 {
 int i, check = 0;
 
-<<<<<<< HEAD
 va_list arguments;
 int (*func)(va_list);
-=======
-printer_t func[] = {
-{"c", print_char},
-{"s", print_string},
-{"%", print_percent},
-};
->>>>>>> f34751e2f18a09466dfc6d76adfdf341b1010377
 
 va_start(arguments, format);
 if (format = NULL)

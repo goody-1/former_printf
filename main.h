@@ -1,10 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
-<<<<<<< HEAD
- #include <unistd.h>
-=======
+#define BUFSIZE 1024;
 
->>>>>>> f34751e2f18a09466dfc6d76adfdf341b1010377
+#include <unistd.h>
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -25,11 +23,16 @@ int (*func_t)(va_list);
 int _printf(const char *format, ...);
 int print_char(va_list list);
 int print_string(va_list list);
-int print_percent(va_list list);
 int _write(char c);
 int (*get_flag_func(char s))(va_list);
 int *rot13(va_list arg_list);
+int binary_recursive(unsigned int num, int len);
+int print_binary(va_list arguments);
+int print_decimal(va_list arguments);
+int print_integer(va_list arguments);
+int print_percent(__attribute__((unused))va_list arguments);
+int print_octal(va_list arguments);
+int print_unint(va_list arguments);
 
-int (*get_flag_func(char s))(va_list);
 
 #endif /* MAIN_H */

@@ -18,7 +18,7 @@ int print_char(va_list arg_list)
 * @arg_list: Stores a list of characters
 * Return: num of parameters printed
 */
-int print_s(va_list arg_list)
+int print_string(va_list arg_list)
 {
 	int i, count = 0;
 	char *str;

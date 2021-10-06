@@ -5,11 +5,11 @@
  * @format: A string of all characters
  * @func: list of all functions
  * @list: A list of all the arguments passed
- * 
+ *
  * Return: A total of the character printed.
  */
 
-int printer_func(const char *format, print_t func[], va_list list)
+int printer_func(const char *format, printer_t func[], va_list list)
 {
 int a, b, args, print_c = 0;
 
@@ -39,9 +39,9 @@ print_c = print_c + 2;
 else
 return (-1);
 }
-a = a + 1; 
+a = a + 1;
 }
-_write(format[a]); 
+_write(format[a]);
 print_c++;
 
 return(print_c);

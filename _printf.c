@@ -3,7 +3,7 @@
 /**
  * _printf -produces output according to a format.
  * @format: a character string
- * 
+ *
  * Return: the number of characters printed
  */
 
@@ -11,11 +11,11 @@ int _printf(const char *format, ...)
 {
 int print_c;
 
-print_t func[] = {
+printer_t func[] = {
 {"c", print_char},
 {"s", print_string},
 {"%", print_percent},
-}; 
+};
 
 va_list list;
  if (format == NULL)

@@ -1,15 +1,15 @@
 #include "main.h"
 /**
  * print_octal - prints the octal representation of a decimal number
- * @parameters: argument
+ * @arguments: argument
  *
  * Return: number of characters printed
  */
 
-int print_octal(va_list parameters)
+int print_octal(va_list arguments)
 {
 	int j = 0;
-	unsigned int num = va_arg(parameters, unsigned int);
+	unsigned int num = va_arg(arguments, unsigned int);
 	int arr[sizeof(int) * 8 + 1];
 	int i = 0;
 

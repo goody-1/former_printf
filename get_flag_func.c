@@ -1,26 +1,36 @@
 #include "main.h"
 
 /**
-* get_func - search and return the correct function
-* @s: array to check
-* Return: return a function (if written correctly)
-**/
+ *get_func - function to find a function pointer associated with specifier
+ *@s: specifier to find the correct function
+ *
+ *Return: function pointer
+ */
 
-int (*get_flag_func(char s))(va_list)
+int (*get_flag_func(const char a))(va_list)
 {
-	printer_t ops[] = {
-		{"c", print_char},
-		{"s", print_string},
-		{"%", print_percent},
-		{NULL, NULL}
-	};
+unsigned int m = 0;
 
-	unsigned int i = 0;
+printer_t ops[] = {
+{'c', print_char},
+{'s', print_string},
+{'%', print_percent},
+{'i', print_integer},
+{'d', print_decimal},
+{'b', print_binary},
+{'u', print_unint},
+{'o', print_octal},
+{'R', rot13},
+{"r", print_reversed},
+{'\0', NULL}
+};
 
-	for (; ops[i].symbol; i++)
-	{
-		if (ops[i].symbol == s)
-			return (ops[i].func_t);
-	}
-	return (NULL);
+
+for (; ops[m].symbol; m++)
+{
+if (a == ops[m].symbol)
+return (ops[m].func_t);
+}
+
+return (NULL);
 }

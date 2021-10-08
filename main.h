@@ -13,7 +13,7 @@
 /* Type Definitions */
 
 /**
- *struct printer - structure for printing various types
+ * struct printer - structure for printing various types
  * @symbol: type to print
  * @func_t: function to print
  */

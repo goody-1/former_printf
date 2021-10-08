@@ -1,7 +1,7 @@
 #ifndef _PRINTF_H_
 #define _PRINTF_H_
 
-#define BUFSIZE 1024;
+#define BUFSIZE 1024
 
 /* Importing Libraries */
 
@@ -13,15 +13,15 @@
 /* Type Definitions */
 
 /**
- *struct format - structure for printing various types
- *@symbol: type to print
- *@func_t: function to print
+ *struct printer - structure for printing various types
+ * @symbol: type to print
+ * @func_t: function to print
  */
 
 typedef struct printer
 {
-const char symbol;
-int (*func_t)(va_list);
+	const char symbol;
+	int (*func_t)(va_list);
 } printer_t;
 
 /* Function Prototypes */
@@ -46,4 +46,4 @@ char *rev_str(char *s);
 int print_reversed(va_list arg);
 int (*func_t)(va_list);
 
-#endif /* MAIN_H */
+#endif /* _PRINTF_H_ */

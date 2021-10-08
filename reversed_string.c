@@ -9,39 +9,46 @@
  */
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
-unsigned int i;
-for (i = 0; i < n; i++)
-dest[i] = src[i];
-dest[i] = '\0';
-return (dest);
+	unsigned int i;
+
+	for (i = 0; i < n; i++)
+		dest[i] = src[i];
+
+	dest[i] = '\0';
+
+	return (dest);
 }
 
 /**
- * rev_str - reverses a string
+ * rev_string - reverses a string
  *
  * @s: string to reverse
  * Return: A pointer to a character
  */
 char *rev_string(char *s)
 {
-int len;
-int head;
-char tmp;
-char *dest;
+	int len;
+	int head;
+	char tmp;
+	char *dest;
 
-for (len = 0; s[len] != '\0'; len++)
-{}
-dest = malloc(sizeof(char) * len + 1);
-if (dest == NULL)
-return (NULL);
-_memcpy(dest, s, len);
-for (head = 0; head < len; head++, len--)
-{
-tmp = dest[len - 1];
-dest[len - 1] = dest[head];
-dest[head] = tmp;
-}
-return (dest);
+	for (len = 0; s[len] != '\0'; len++)
+	{}
+
+	dest = malloc(sizeof(char) * len + 1);
+
+	if (dest == NULL)
+		return (NULL);
+
+	_memcpy(dest, s, len);
+	for (head = 0; head < len; head++, len--)
+	{
+		tmp = dest[len - 1];
+		dest[len - 1] = dest[head];
+		dest[head] = tmp;
+	}
+
+	return (dest);
 }
 
 /**
@@ -52,20 +59,23 @@ return (dest);
 
 int print_reversed(va_list arg)
 {
-int len;
-char *str;
-char *ptr;
+	int len;
+	char *str;
+	char *ptr;
 
-str = va_arg(arg, char *);
-if (str == NULL)
-return (-1);
+	str = va_arg(arg, char *);
 
-ptr = rev_string(str);
-if (ptr == NULL)
-return (-1);
+	if (str == NULL)
+		return (-1);
 
-for (len = 0; ptr[len] != '\0'; len++)
-_write(ptr[len]);
-free(ptr);
-return (len);
+	ptr = rev_string(str);
+
+	if (ptr == NULL)
+		return (-1);
+
+	for (len = 0; ptr[len] != '\0'; len++)
+		_write(ptr[len]);
+
+	free(ptr);
+	return (len);
 }

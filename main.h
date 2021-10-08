@@ -40,14 +40,13 @@ int binary_recursive(unsigned int num, int len);
 int print_binary(va_list arguments);
 int print_unint(va_list arguments);
 int print_octal(va_list args);
-int print_upp_hex(va_list list);
-int print_low_Hex(va_list list);
 int rot13(va_list arguments);
-int hex_string(unsigned int n, unsigned int hex, char alpha);
 char *_memcpy(char *dest, char *src, unsigned int n);
 char *rev_str(char *s);
 int print_reversed(va_list arg);
 int (*func_t)(va_list);
-int print_ptr(va_list list);
+int print_x(va_list x);
+int print_X(va_list X);
+int print_p(va_list p);
 
 #endif /* _PRINTF_H_ */

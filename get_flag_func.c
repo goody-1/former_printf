@@ -11,8 +11,8 @@
 
 int (*get_flag_func(const char a))(va_list)
 {
-	
-    unsigned int m = 0;
+unsigned int m = 0;
+
 	printer_t ops[] = {
 		{'c', print_char},
 		{'s', print_string},

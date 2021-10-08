@@ -45,8 +45,5 @@ char *_memcpy(char *dest, char *src, unsigned int n);
 char *rev_str(char *s);
 int print_reversed(va_list arg);
 int (*func_t)(va_list);
-int print_x(va_list x);
-int print_X(va_list X);
-int print_p(va_list p);
 
 #endif /* _PRINTF_H_ */

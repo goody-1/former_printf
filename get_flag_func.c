@@ -21,7 +21,7 @@ printer_t ops[] = {
 {'u', print_unint},
 {'o', print_octal},
 {'R', rot13},
-{"r", print_reversed},
+{"r", print_rev},
 {'\0', NULL}
 };
 

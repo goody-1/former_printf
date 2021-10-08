@@ -1,7 +1,6 @@
 #ifndef _PRINTF_H_
 #define _PRINTF_H_
 
-#define BUFSIZE 1024;
 
 /* Importing Libraries */
 
@@ -41,9 +40,8 @@ int print_binary(va_list arguments);
 int print_unint(va_list arguments);
 int print_octal(va_list args);
 int rot13(va_list arguments);
-char *_memcpy(char *dest, char *src, unsigned int n);
-char *rev_str(char *s);
-int print_reversed(va_list arg);
+int print_rev(va_list arg_list);
 int (*func_t)(va_list);
+
 
 #endif /* MAIN_H */

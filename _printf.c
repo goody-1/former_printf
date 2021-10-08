@@ -9,7 +9,7 @@ int _printf(const char *format, ...)
 {
 int check = 0, i;
 va_list arguments;
-int (*func)(va_list);
+int (*func_t)(va_list);
 
 va_start(arguments, format);
 if (format == NULL)
@@ -21,15 +21,15 @@ if (format[i] == '%')
 i++;
 if (!(format[i]))
 return (-1);
-func = get_flag_func(format[i]);
-if (func == NULL)
+func_t = get_flag_func(format[i]);
+if (func_t == NULL)
 {
 _write('%');
 _write(format[i]);
 check += 2;
 }
 else
-check += func(arguments);
+check += func_t(arguments);
 }
 else
 {

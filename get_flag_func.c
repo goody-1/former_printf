@@ -21,6 +21,9 @@ int (*get_flag_func(const char a))(va_list)
 		{'b', print_binary},
 		{'u', print_unint},
 		{'o', print_octal},
+		{"x", print_low_Hex},
+	    {"X", print_upp_hex},
+		{"p", print_ptr},
 		{'R', rot13},
 		{'r', print_reversed},
 		{'\0', NULL}

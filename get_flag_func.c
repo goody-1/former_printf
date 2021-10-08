@@ -23,7 +23,7 @@ int (*get_flag_func(const char a))(va_list)
 		{'u', print_unint},
 		{'o', print_octal},
 		{'R', rot13},
-		{"r", print_reversed},
+		{'r', print_reversed},
 		{'\0', NULL}
 	};
 
